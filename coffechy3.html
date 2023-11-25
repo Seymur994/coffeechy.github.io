@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeChy</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3d3d3d;
+        }
+
+        /* Logo için stil */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+        }
+       
+        .menu-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .menu-button {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            background-color: #5f9ea0; /* Bulanık Yeşil */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-button:hover {
+            background-color: #468284; /* Daha koyu yeşil tonu */
+        }
+
+        .menu-category {
+            margin-bottom: 20px;
+        }
+
+        .menu-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .item-name {
+            font-weight: bold;
+            color: #3d3d3d;
+        }
+
+        .item-description {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .item-price {
+            font-style: italic;
+            color: #8b4513; /* Kahverengi tonu */
+        }
+
+        /* Mobil Ekranlar İçin Stil */
+        @media only screen and (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+
+            .menu-item {
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo Ekranı -->
+    <!-- <div class="logo-container">
+        <img src="https://png.pngtree.com/png-vector/20221116/ourlarge/pngtree-owl-head-logo-clipart-png-image_6459582.png" alt="" class="logo">
+    </div> -->
+
+    <h1>CoffeeChy</h1>
+
+    <!-- Kategori Düğmeleri -->
+    <div class="menu-buttons">
+        <button class="menu-button" onclick="showCategory('kahve')">Kahve</button>
+        <button class="menu-button" onclick="showCategory('cay')">Çay</button>
+    </div>
+
+    <!-- Kahve Menüsü -->
+    <div class="menu-category" id="kahveMenu">
+        <h2 style="color: #5f9ea0;">Kahve</h2>
+
+        <div class="menu-item">
+            <div class="item-name">Espresso</div>
+            <div class="item-description">A strong black coffee made by forcing hot water through finely-ground coffee beans.</div>
+            <div class="item-price">$2.50</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-name">Cappuccino</div>
+            <div class="item-description">A coffee drink that is composed of a double espresso and steamed milk, with the surface topped with foamed milk.</div>
+            <div class="item-price">$3.50</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-name">Latte</div>
+            <div class="item-description">A coffee drink made with espresso and steamed milk.</div>
+            <div class="item-price">$4.00</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-name">Mocha</div>
+            <div class="item-description">A chocolate-flavored variant of a latte, with espresso, steamed milk, and chocolate syrup.</div>
+            <div class="item-price">$4.50</div>
+        </div>
+    </div>
+
+    <!-- Çay Menüsü -->
+    <div class="menu-category" id="cayMenu" style="display: none;">
+        <h2 style="color: #5f9ea0;">Çay</h2>
+
+        <div class="menu-item">
+            <div class="item-name">Earl Grey</div>
+            <div class="item-description">Black tea flavored with oil of bergamot.</div>
+            <div class="item-price">$2.00</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-name">Chamomile</div>
+            <div class="item-description">A herbal tea made from dried chamomile flowers.</div>
+            <div class="item-price">$2.00</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-name">Green Tea</div>
+            <div class="item-description">A type of tea that is made from Camellia sinensis leaves and buds.</div>
+            <div class="item-price">$2.50</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-name">Peppermint</div>
+            <div class="item-description">A tea made from the dried leaves of the peppermint plant.</div>
+            <div class="item-price">$2.50</div>
+        </div>
+    </div>
+
+    <script>
+        function showCategory(category) {
+            if (category === 'kahve') {
+                document.getElementById('kahveMenu').style.display = 'block';
+                document.getElementById('cayMenu').style.display = 'none';
+            } else if (category === 'cay') {
+                document.getElementById('kahveMenu').style.display = 'none';
+                document.getElementById('cayMenu').style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
